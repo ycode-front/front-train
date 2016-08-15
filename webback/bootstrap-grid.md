@@ -17,10 +17,15 @@ bootstrap 栅格系统可以用来做响应式的开发。但是现在对后台p
 
 ## 基本结构
 
-- .container
-    - .row
-        - .col-xs-6
-        - .col-xs-6
+```html
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            这里是内容
+        </div>
+    </div>
+</div>
+```
 
 例子 base.html
 
@@ -33,15 +38,44 @@ bootstrap 栅格系统可以用来做响应式的开发。但是现在对后台p
     - 如果不需要可以直接设置padding为0
     - 如果不需要可以设置子元素的margin-left 为负数来抵消
 
+```html
+<div class="row">
+    <div class="col-xs-2">
+        这里是内容
+    </div>
+    <div class="col-xs-10">
+        <!-- 将一列中的内容再分成两等分 -->
+        <div class="row">
+            <div class="col-xs-6">第一等分</div>
+            <div class="col-xs-6">第二等分</div>
+        </div>
+    </div>
+</div>
+```
+
 例子 nest.html
 
 ## 列偏移
 
 使用列偏移可以把一列内容放到指定的位置，但是同时会影响其之后的其他列
 
+```html
+<div class="row">
+    <div class="col-xs-2">
+        <div class="box">占据2个栅格</div>
+    </div>
+    <div class="col-xs-2 col-xs-offset-2">
+        <div class="box">占据2个栅格 偏移两个栅格</div>
+    </div>
+</div>
+```
+
 例子 offset.html
 
 ## 栅格排序
+
+- col-xs-push-* 将列向右偏移 n 个栅格
+- col-xs-pull-* 将列向左偏移 n 个栅格
 
 使用列排序可以把一列内容放到指定的位置，同时不会对其他列的位置产生任何影响
 
